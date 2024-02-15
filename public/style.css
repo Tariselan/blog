@@ -15,6 +15,18 @@ body {
     margin: 0;
     padding: 0;
 }
+nav {
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: var(--clr-div-brdr);
+}
+
+main {
+    flex: 1;
+    background-color: var(--clr-background);
+}
 
 
 header, footer {
@@ -22,7 +34,9 @@ header, footer {
     text-align: center;
     background-color: var(--clr-div-bckg);
     flex-shrink: 0; /* Prevent header and footer from shrinking */
+    padding: 20px 0;
 }
+
 
 footer {
     margin-top: auto;
@@ -52,46 +66,4 @@ section div {
     min-height: 100px;
     padding: 10px 30px 10px 30px;
     margin: 10px;
-}
-
-
-.submit {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-#blog-entry-form {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#blog-entry-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-#blog-entry-form input[type="text"],
-#blog-entry-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-#blog-entry-form button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#blog-entry-form button:hover {
-    background-color: #0056b3;
 }

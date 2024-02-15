@@ -1,0 +1,110 @@
+:root {
+    --clr-text-main: #333;
+    --clr-background: #ddd;
+    --clr-div-bckg: #ccc;
+    --clr-div-brdr: #acacac;
+    --clr-dev: #f00;
+    --clr-form: #ccc;
+}
+
+body {
+    background-color: var(--clr-background);
+    color: var(--clr-text-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    width: 100%;
+    text-align: center;
+    background-color: var(--clr-div-bckg);
+    flex-shrink: 0; /* Prevent header and footer from shrinking */
+    padding: 20px 0;
+}
+
+nav {
+    display: inline-block;
+}
+
+nav a {
+    padding: 10px 20px;
+    background-color: var(--clr-div-bckg);
+    color: var(--clr-text-main);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav a:hover {
+    background-color: var(--clr-div-brdr);
+}
+
+main {
+    flex: 1;
+    background-color: var(--clr-background);
+}
+
+
+section div {
+    background-color: var(--clr-div-bckg);
+    border: solid 3px var(--clr-div-brdr);
+    border-radius: 5px;
+    min-height: 100px;
+    padding: 10px 30px;
+    margin: 10px;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.container {
+    flex-grow: 1; /* Grow to take up remaining space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Add padding to create space around the form */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%; /* Use 80% width of the container */
+    background-color: var(--clr-form);
+    padding: 20px; /* Add padding to the form */
+    border: solid 5px var(--clr-div-brdr);
+    border-radius: 10px; /* Add border radius for rounded corners */
+    margin: 0 auto; /* Center horizontally */
+}
+
+
+form label {
+    margin-bottom: 10px;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--clr-div-brdr);
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: var(--clr-div-bckg);
+    color: var(--clr-text-main);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--clr-div-brdr);
+}
