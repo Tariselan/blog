@@ -1,0 +1,97 @@
+:root {
+    --clr-text-main: #333;
+    --clr-background: #ddd;
+    --clr-div-bckg: #ccc;
+    --clr-div-brdr: #acacac;
+    --clr-dev: #f00;
+}
+
+body {
+    background-color: var(--clr-background);
+    color: var(--clr-text-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+header, footer {
+    width: 100%;
+    text-align: center;
+    background-color: var(--clr-div-bckg);
+    flex-shrink: 0; /* Prevent header and footer from shrinking */
+}
+
+footer {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    background-color: var(--clr-div-bckg);
+}
+
+main {
+    flex: 1;
+    background-color: var(--clr-background);
+}
+
+.container {
+    flex-grow: 1; /* Grow to take up remaining space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section div {
+    background-color: var(--clr-div-bckg); /* Use var() to reference the CSS variable */
+    border: solid 3px var(--clr-div-brdr);
+    border-radius: 5px;
+    min-height: 100px;
+    min-height: 100px;
+    padding: 10px 30px 10px 30px;
+    margin: 10px;
+}
+
+
+.submit {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#blog-entry-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#blog-entry-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#blog-entry-form input[type="text"],
+#blog-entry-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#blog-entry-form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#blog-entry-form button:hover {
+    background-color: #0056b3;
+}
