@@ -70,6 +70,10 @@ footer {
     padding: 20px; /* Add padding to create space around the form */
 }
 
+section {
+    min-width: 500px;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -89,6 +93,7 @@ form label {
 
 form input[type="text"],
 form textarea {
+font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif       ;
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;

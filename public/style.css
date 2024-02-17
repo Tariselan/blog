@@ -15,13 +15,24 @@ body {
     margin: 0;
     padding: 0;
 }
+
 nav {
     display: inline-block;
+}
+
+nav a {
+    padding: 10px 20px;
+    background-color: var(--clr-div-bckg);
+    color: var(--clr-text-main);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 nav a:hover {
     background-color: var(--clr-div-brdr);
 }
+
 
 main {
     flex: 1;

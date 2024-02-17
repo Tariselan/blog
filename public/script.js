@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         titleElement.textContent = title;
 
         const contentElement = document.createElement('p');
-        contentElement.textContent = content;
+        contentElement.innerHTML = content;
 
         entryDiv.appendChild(titleElement);
         entryDiv.appendChild(contentElement);
