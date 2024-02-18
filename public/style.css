@@ -1,80 +1,83 @@
 :root {
     --clr-text-main: #333;
-    --clr-background: #ddd;
-    --clr-div-bckg: #ccc;
-    --clr-div-brdr: #acacac;
-    --clr-dev: #f00;
+    --clr-background: #0c5884;
+    --clr-primary: #49ffaa; /* Updated primary color to yellow-green */
+    --clr-secondary: #26d36e;
+    --clr-tertiary: #13b456;
+    --clr-accent: #e67e22;
+    --clr-border: #bdc3c7;
 }
 
 body {
+    font-family: Arial, sans-serif;
     background-color: var(--clr-background);
     color: var(--clr-text-main);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
     margin: 0;
     padding: 0;
 }
 
 nav {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
 }
 
 nav a {
     padding: 10px 20px;
-    background-color: var(--clr-div-bckg);
-    color: var(--clr-text-main);
-    border: none;
+    color: var(--clr-primary);
+    text-decoration: none;
     border-radius: 5px;
-    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: var(--clr-div-brdr);
+    background-color: var(--clr-tertiary);
 }
-
-
-main {
-    flex: 1;
-    background-color: var(--clr-background);
-}
-
 
 header, footer {
-    width: 100%;
     text-align: center;
-    background-color: var(--clr-div-bckg);
-    flex-shrink: 0; /* Prevent header and footer from shrinking */
-    padding: 20px 0;
-}
-
-
-footer {
-    margin-top: auto;
-    width: 100%;
-    text-align: center;
-    background-color: var(--clr-div-bckg);
+    background-color: var(--clr-secondary);
+    color: #fff;
 }
 
 main {
-    flex: 1;
-    background-color: var(--clr-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    min-height: calc(100vh - 160px); /* Adjust based on header and footer height */
 }
 
 .container {
-    flex-grow: 1; /* Grow to take up remaining space */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    max-width: 800px;
+    width: 90%;
+    padding: 20px;
+    background-color: var(--clr-secondary);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
 }
 
 section div {
-    background-color: var(--clr-div-bckg); /* Use var() to reference the CSS variable */
-    border: solid 3px var(--clr-div-brdr);
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: var(--clr-tertiary);
     border-radius: 5px;
-    min-height: 100px;
-    min-height: 100px;
-    padding: 10px 30px 10px 30px;
-    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: var(--clr-primary);
+}
+
+header {
+    border-radius:0 0 50px 50px;
+    
+    padding: 20px 0;
+}
+
+footer {
+    color: #fff;
+    
+    padding: 20px;
 }
