@@ -1,10 +1,12 @@
 :root {
-    --clr-text-main: #333;
-    --clr-background: #ddd;
-    --clr-div-bckg: #ccc;
-    --clr-div-brdr: #acacac;
-    --clr-dev: #f00;
-    --clr-form: #ccc;
+    --clr-text-main: #84faa9; /* Updated text color to white */
+    --clr-background: #0c5884;
+    --clr-primary: #49ffaa;
+    --clr-secondary: #26d36e;
+    --clr-tertiary: #13b456;
+    --clr-accent: #e67e22;
+    --clr-border: #15954a;
+    --clr-form: #13b456; /* Updated form background color */
 }
 
 body {
@@ -20,9 +22,11 @@ body {
 header, footer {
     width: 100%;
     text-align: center;
-    background-color: var(--clr-div-bckg);
+    background-color: var(--clr-secondary); /* Updated header and footer background color */
     flex-shrink: 0; /* Prevent header and footer from shrinking */
     padding: 20px 0;
+    height: 100px;
+    display: flex;
 }
 
 nav {
@@ -31,7 +35,7 @@ nav {
 
 nav a {
     padding: 10px 20px;
-    background-color: var(--clr-div-bckg);
+    background-color: var(--clr-secondary); /* Updated nav background color */
     color: var(--clr-text-main);
     border: none;
     border-radius: 5px;
@@ -39,7 +43,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: var(--clr-div-brdr);
+    background-color: var(--clr-tertiary); /* Updated nav hover background color */
 }
 
 main {
@@ -47,18 +51,21 @@ main {
     background-color: var(--clr-background);
 }
 
-
 section div {
-    background-color: var(--clr-div-bckg);
-    border: solid 3px var(--clr-div-brdr);
+    background-color: var(--clr-tertiary); /* Updated section div background color */
+    border: solid 3px var(--clr-border); /* Updated section div border color */
     border-radius: 5px;
     min-height: 100px;
     padding: 10px 30px;
-    margin: 10px;
+    margin: 0 auto; /* Center horizontally */
+    width: 70%; /* Use 80% width of the container */
 }
 
 footer {
-    margin-top: auto;
+    display: flex;
+    background-color: var(--clr-tertiary);
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
 }
 
 .container {
@@ -67,7 +74,12 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px; /* Add padding to create space around the form */
+    padding: 10px 0; /* Add padding to create space around the form */
+}
+
+.two {
+    padding: 100px 10px; /* Add padding to create space around the form */
+    flex-direction: row;
 }
 
 section {
@@ -81,11 +93,10 @@ form {
     width: 80%; /* Use 80% width of the container */
     background-color: var(--clr-form);
     padding: 20px; /* Add padding to the form */
-    border: solid 5px var(--clr-div-brdr);
+    border: solid 5px var(--clr-border); /* Updated form border color */
     border-radius: 10px; /* Add border radius for rounded corners */
     margin: 0 auto; /* Center horizontally */
 }
-
 
 form label {
     margin-bottom: 10px;
@@ -93,17 +104,17 @@ form label {
 
 form input[type="text"],
 form textarea {
-font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif       ;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
-    border: 1px solid var(--clr-div-brdr);
+    border: 1px solid var(--clr-border);
     border-radius: 5px;
 }
 
 form button {
     padding: 10px 20px;
-    background-color: var(--clr-div-bckg);
+    background-color: var(--clr-secondary); /* Updated form button background color */
     color: var(--clr-text-main);
     border: none;
     border-radius: 5px;
@@ -111,5 +122,5 @@ form button {
 }
 
 form button:hover {
-    background-color: var(--clr-div-brdr);
+    background-color: var(--clr-primary); /* Updated form button hover background color */
 }
