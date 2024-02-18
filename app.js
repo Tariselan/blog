@@ -36,7 +36,8 @@ app.get('/', (req, res) => {
 app.post('/submit', (req, res) => {
     const title = req.body.title;
     const content = req.body.htmlContent; // Retrieve the HTML content instead of Markdown
-    
+    console.log('Received title:', title);
+    console.log('Received content:', content);
     
     // Insert blog entry into the SQLite database
     db.run('INSERT INTO entries (title, content) VALUES (?, ?)', [title, content], function(err) {
