@@ -35,7 +35,8 @@ app.get('/', (req, res) => {
 // Route to handle form submissions
 app.post('/submit', (req, res) => {
     const title = req.body.title;
-    const content = req.body.content;
+    const content = req.body.htmlContent; // Retrieve the HTML content instead of Markdown
+    
     
     // Insert blog entry into the SQLite database
     db.run('INSERT INTO entries (title, content) VALUES (?, ?)', [title, content], function(err) {
