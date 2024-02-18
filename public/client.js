@@ -4,15 +4,62 @@ document.addEventListener('DOMContentLoaded', function() {
     const contentInput = form.querySelector('#content');
     const previewDiv = document.getElementById('preview');
 
+    // Function to convert Markdown content to HTML
+    function convertMarkdownToHtml(markdown) {
+        // Regular expressions to match markdown patterns
+        const headerRegex = /^(#+) (.+)$/gm;
+        const italicRegex = /\*(.*?)\*/gm;
+        const boldRegex = /_(.*?)_/gm;
+        const ulRegex = /^(\s*-\s.+?(?:\n|$))+/gm;
+    
+        // Convert markdown patterns to HTML
+        let html = markdown
+            .replace(headerRegex, (match, p1, p2) => `<h${p1.length}>${p2}</h${p1.length}>`)
+            .replace(italicRegex, '<i>$1</i>')
+            .replace(boldRegex, '<b>$1</b>');
+    
+        // Find and replace list items with <li> tags
+        html = html.replace(ulRegex, (match) => {
+            let nestedListHtml = '<ul>';
+            const listItems = match.split('\n');
+            for (let i = 0; i < listItems.length; i++) {
+                const listItem = listItems[i];
+                const itemContent = listItem.trim().slice(2); // Remove the '-' and trim whitespace
+                nestedListHtml += `<li>${itemContent}</li>`;
+            }
+            nestedListHtml += '</ul>';
+            return nestedListHtml;
+        });
+    
+        // Wrap any remaining content in <p> tags
+        html = html.replace(/^(?!<\/?(h\d|ul)>)(.*?)$/gm, (match, p1) => {
+            if (typeof p1 !== 'undefined') {
+                // Check if p1 is not empty
+                if (p1.trim() !== '') {
+                    // Check for italic and bold formatting before wrapping in <p> tags
+                    p1 = p1.replace(italicRegex, '<i>$1</i>').replace(boldRegex, '<b>$1</b>');
+                    return `<p>${p1}</p>`;
+                }
+            }
+            // If p1 is undefined or empty, return an empty string
+            return '';
+        });
+    
+        return html;
+    }
+
     // Function to update the preview
     function updatePreview() {
         const title = titleInput.value;
         const content = contentInput.value;
 
-        // Update the inner HTML of the preview div with the title and content
+        // Convert Markdown content to HTML
+        const htmlContent = convertMarkdownToHtml(content);
+
+        // Update the inner HTML of the preview div with the title and HTML content
         previewDiv.innerHTML = `
             <h3>${title}</h3>
-            <p>${content}</p>
+            ${htmlContent}
         `;
     }
 
